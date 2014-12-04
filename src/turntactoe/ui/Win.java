@@ -19,6 +19,7 @@ public class Win extends javax.swing.JFrame {
      */
     public Win() {
         initComponents();
+        this.setIconImage(TurnTacToe.img);
     }
     
     public static void setPlayerText(String player){
@@ -37,6 +38,7 @@ public class Win extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -69,6 +71,7 @@ public class Win extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing

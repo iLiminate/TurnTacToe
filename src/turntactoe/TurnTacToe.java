@@ -6,6 +6,9 @@
 
 package turntactoe;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JButton;
 import javax.swing.JList;
 import turntactoe.ui.Game;
@@ -24,6 +27,9 @@ public class TurnTacToe {
         // TODO code application logic here
         new Interface().setVisible(true);
     }
+    public static URL url = Interface.class.getResource("/turntactoe/resources/bttt.png");
+    public static Toolkit kit = Toolkit.getDefaultToolkit();
+    public static Image img = kit.createImage(url);
     
     /**
      * @param rotations How many times to rotate the pieces on the board around the center.
@@ -37,14 +43,13 @@ public class TurnTacToe {
         
         for (int i=0;i<8;i++){
             values[i] = buttons[(value1+i<8)? value1+i : i ].getText();
-            System.out.println(buttons[i].getName() + ": " + values[i]);
+            //System.out.println(buttons[i].getName() + ": " + values[i]);
         }
-        System.out.println("____");
+        //System.out.println("____");
         for (int e=0;e<9;e++){
-            rButtons[e].setText((e+1<values.length) ? values[e+1]: values[e] );
-           // rButtons[e].setEnabled(!(values[e].contains("X") || values[e].contains("O")));
+            rButtons[e].setText((e+1<values.length) ? values[e+1]: values[values.length - e + 1] );
         }
-        
+        for (JButton button:rButtons){button.setEnabled(!(button.getText().contains("X") || button.getText().contains("O")));}
     }
     /**
     *@return Returns true if there is a win.(fix this so it does it per player?)

@@ -5,7 +5,7 @@
  */
 
 package turntactoe.ui;
-
+import turntactoe.TurnTacToe;
 /**
  *
  * @author iLiminate
@@ -18,6 +18,7 @@ public class Interface extends javax.swing.JFrame {
      */
     public Interface() {
         initComponents();
+        this.setIconImage(TurnTacToe.img);
     }
 
     /**

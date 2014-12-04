@@ -20,6 +20,7 @@ public class Game extends javax.swing.JFrame {
      */
     public Game() {
         initComponents();
+        this.setIconImage(TurnTacToe.img);
     }
     /**
      *
